@@ -1,6 +1,6 @@
 //Maya ASCII 2016ff07 scene
 //Name: modelDefault.ma
-//Last modified: Tue, Jan 17, 2017 04:17:18 PM
+//Last modified: Fri, Feb 17, 2017 07:35:14 PM
 //Codeset: 1252
 requires maya "2016ff07";
 currentUnit -l centimeter -a degree -t film;

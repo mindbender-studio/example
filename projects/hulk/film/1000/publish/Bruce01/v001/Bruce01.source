@@ -1,10 +1,10 @@
 //Maya ASCII 2016ff07 scene
-//Name: source.ma
-//Last modified: Tue, Jan 17, 2017 04:33:52 PM
+//Name: Bruce01.source
+//Last modified: Fri, Feb 17, 2017 08:04:56 PM
 //Codeset: 1252
 requires maya "2016ff07";
 currentUnit -l centimeter -a degree -t film;
-fileInfo "exportedFrom" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/pyblish-mindbender/example/projects/hulk/film/1000/work/animation/marcus/maya/scenes/anim_v001.ma";
+fileInfo "exportedFrom" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/mindbender-example/projects/hulk/film/1000/work/animation/marcus/maya/scenes/anim_v001.ma";
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2016";
 fileInfo "version" "2016";
@@ -355,15 +355,15 @@ createNode parentConstraint -n "Bruce01_:joint1_parentConstraint1" -p "Bruce01_:
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "9B1F00B2-42D1-0C2F-1B21-AA8DC20AE664";
+	rename -uid "5CD8B764-4E2A-B9DD-421F-51B108529977";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "6C386A1B-422D-E778-6C53-4C8896B3C3B8";
+	rename -uid "41123CA5-4F05-169E-6AF9-B3852D0A6D11";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A5814859-405D-2AAB-A413-97996BD23DA4";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "80947471-4617-AAA7-3811-DE9992157084";
+	rename -uid "58A0F54B-4331-3E8A-31D4-A3839ADA5FC6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "C0F74B98-45CD-23A7-FF8B-77B74ED3EB86";
 	setAttr ".g" yes;
@@ -432,7 +432,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 24 -ast 1 -aet 48 ";
 	setAttr ".st" 6;
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "557D98E1-4C89-A813-08AC-669F39CFA8BD";
+	rename -uid "107E50E6-4D78-BBE2-DCB0-AE9F39C5076A";
 	setAttr ".pee" yes;
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -441.66664911641089 -228.57141948881642 ;
@@ -595,29 +595,8 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "Bruce01_:rigDefault.msg" "Bruce01_RN.asn[0]";
-connectAttr "Bruce01_:bindPose1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:controls_SET.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:groupId2.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:groupParts2.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:makeNurbCircle1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:out_SET.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:skinCluster1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:skinCluster1GroupId.msg" "Bruce01_:rigDefault_CON.dnsm" -na
-		;
-connectAttr "Bruce01_:skinCluster1GroupParts.msg" "Bruce01_:rigDefault_CON.dnsm"
-		 -na;
-connectAttr "Bruce01_:skinCluster1Set.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:tweak1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:tweakSet1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_RN.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
-connectAttr "Bruce01_:rigDefault.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "sharedReferenceNode.sr" "Bruce01_RN.sr";
 connectAttr "Bruce01_:ROOT.iog" "Bruce01_:rigDefault_CON.dsm" -na;
-connectAttr "Bruce01_:DATA.iog" "Bruce01_:rigDefault_CON.dsm" -na;
-connectAttr "Bruce01_:ball_CTL.iog" "Bruce01_:rigDefault_CON.dsm" -na;
-connectAttr "Bruce01_:ball_CTLShape.iog" "Bruce01_:rigDefault_CON.dsm" -na;
-connectAttr "Bruce01_:joint1.iog" "Bruce01_:rigDefault_CON.dsm" -na;
-connectAttr "Bruce01_:joint1_parentConstraint1.iog" "Bruce01_:rigDefault_CON.dsm"
-		 -na;
 connectAttr "Bruce01_:MESH.iog" "Bruce01_:rigDefault_CON.dsm" -na;
 connectAttr "Bruce01_:Bruce01_:modelDefault.iog" "Bruce01_:rigDefault_CON.dsm" -na
 		;
@@ -627,13 +606,35 @@ connectAttr "Bruce01_:Bruce01_:BRUCE.iog" "Bruce01_:rigDefault_CON.dsm" -na;
 connectAttr "Bruce01_:Bruce01_:bruce_0.iog" "Bruce01_:rigDefault_CON.dsm" -na;
 connectAttr "Bruce01_:Bruce01_:bruce_Shape0.iog" "Bruce01_:rigDefault_CON.dsm" -na
 		;
-connectAttr "Bruce01_:output_GRP.iog" "Bruce01_:rigDefault_CON.dsm" -na;
-connectAttr "Bruce01_:bruce_0.iog" "Bruce01_:rigDefault_CON.dsm" -na;
-connectAttr "Bruce01_:bruce_Shape0.iog" "Bruce01_:rigDefault_CON.dsm" -na;
 connectAttr "Bruce01_:skinning_PLY.iog" "Bruce01_:rigDefault_CON.dsm" -na;
 connectAttr "Bruce01_:skinning_PLYShape.iog" "Bruce01_:rigDefault_CON.dsm" -na;
 connectAttr "Bruce01_:skinning_PLYShapeOrig.iog" "Bruce01_:rigDefault_CON.dsm" -na
 		;
+connectAttr "Bruce01_:output_GRP.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:bruce_0.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:bruce_Shape0.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:DATA.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:ball_CTL.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:ball_CTLShape.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:joint1.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:joint1_parentConstraint1.iog" "Bruce01_:rigDefault_CON.dsm"
+		 -na;
+connectAttr "Bruce01_:rigDefault.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_:controls_SET.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:out_SET.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:skinCluster1GroupId.msg" "Bruce01_:rigDefault_CON.dnsm" -na
+		;
+connectAttr "Bruce01_:skinCluster1Set.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:skinCluster1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:bindPose1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:skinCluster1GroupParts.msg" "Bruce01_:rigDefault_CON.dnsm"
+		 -na;
+connectAttr "Bruce01_:tweak1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:tweakSet1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:groupId2.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:groupParts2.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_:makeNurbCircle1.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "Bruce01_RN.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
 connectAttr "Bruce01_:bruce_0.iog" "Bruce01_SET.dsm" -na;
 connectAttr "Bruce01_:ball_CTL.iog" "Bruce01_:controls_SET.dsm" -na;
 connectAttr "Bruce01_:bruce_0.iog" "Bruce01_:out_SET.dsm" -na;
@@ -670,4 +671,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Bruce01_:skinning_PLYShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Bruce01_:bruce_Shape0.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Bruce01_:Bruce01_:bruce_Shape0.iog" ":initialShadingGroup.dsm" -na;
-// End of source.ma
+// End of Bruce01.source

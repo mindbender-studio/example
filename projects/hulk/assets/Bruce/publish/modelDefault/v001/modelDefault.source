@@ -1,10 +1,10 @@
 //Maya ASCII 2016ff07 scene
-//Name: source.ma
-//Last modified: Tue, Jan 17, 2017 04:17:18 PM
+//Name: modelDefault.source
+//Last modified: Fri, Feb 17, 2017 07:35:14 PM
 //Codeset: 1252
 requires maya "2016ff07";
 currentUnit -l centimeter -a degree -t film;
-fileInfo "exportedFrom" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/pyblish-mindbender/example/projects/hulk/assets/Bruce/work/modeling/marcus/maya/scenes/model_v001.ma";
+fileInfo "exportedFrom" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/mindbender-example/projects/hulk/assets/Bruce/work/modeling/marcus/maya/scenes/model_v001.ma";
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2016";
 fileInfo "version" "2016";
@@ -182,15 +182,15 @@ createNode mesh -n "bruce_Shape0" -p "bruce_0";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".vbc" no;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "A6921CDD-4B47-1FA9-5C0B-FE9022C805DA";
+	rename -uid "19B24EFA-4256-8B4F-45F9-A2A90F81FCDC";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "EF614656-4624-0056-80FB-3FB055662F35";
+	rename -uid "E3879498-45E3-0393-818F-FF86B9D4607A";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A7225D60-41E7-0807-F17F-3C94683E08E3";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "FD569FFB-4A68-345B-CF86-FAB7F72A2260";
+	rename -uid "2A0EEFDC-476D-721E-739D-969DDCDC6CEC";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "36432759-4EF3-34F4-7001-DFB92308DE15";
 	setAttr ".g" yes;
@@ -250,4 +250,4 @@ connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "ROOT.iog" "modelDefault_SET.dsm" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "bruce_Shape0.iog" ":initialShadingGroup.dsm" -na;
-// End of source.ma
+// End of modelDefault.source

@@ -1,9 +1,9 @@
 //Maya ASCII 2016ff07 scene
 //Name: rig_v001.ma
-//Last modified: Tue, Jan 17, 2017 04:32:45 PM
+//Last modified: Fri, Feb 17, 2017 08:01:43 PM
 //Codeset: 1252
-file -rdi 1 -ns "Bruce01_" -rfn "Bruce01_RN" -typ "mayaAscii" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/pyblish-mindbender/example/projects/hulk/assets/Bruce/publish/modelDefault/v001/modelDefault.ma";
-file -r -ns "Bruce01_" -dr 1 -rfn "Bruce01_RN" -typ "mayaAscii" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/pyblish-mindbender/example/projects/hulk/assets/Bruce/publish/modelDefault/v001/modelDefault.ma";
+file -rdi 1 -ns "Bruce01_" -rfn "Bruce01_RN" -typ "mayaAscii" "$projectdir/assets/Bruce/publish/modelDefault/v001/modelDefault.ma";
+file -r -ns "Bruce01_" -dr 1 -rfn "Bruce01_RN" -typ "mayaAscii" "$projectdir/assets/Bruce/publish/modelDefault/v001/modelDefault.ma";
 requires maya "2016ff07";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -14,13 +14,13 @@ fileInfo "osv" "Microsoft Windows 8 Enterprise Edition, 64-bit  (Build 9200)\n";
 createNode transform -s -n "persp";
 	rename -uid "F02E6190-453D-8497-1394-E9A7BF47E685";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.9671349981292456 2.9708373610042793 3.1669222625280082 ;
-	setAttr ".r" -type "double3" -30.33835272960297 -51.399999999999842 -2.5490132216529781e-015 ;
+	setAttr ".t" -type "double3" -2.6684660202030308 1.5544161341077167 1.0243281338700272 ;
+	setAttr ".r" -type "double3" -28.538352729603041 -68.999999999999957 4.4375545936781173e-015 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "28C6FDBD-4519-E9E6-F021-11984869D707";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 5.8816180882318783;
+	setAttr ".coi" 3.253639276992804;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -252,20 +252,21 @@ createNode parentConstraint -n "joint1_parentConstraint1" -p "joint1";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "3FFCB626-4DAA-40D3-9A14-519BCE6F6E5C";
+	rename -uid "4E38AA0C-44DC-9C27-B86B-A2AE5C8E0F56";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "089FD61E-4461-DC4C-8B73-DFB8B0F0C361";
+	rename -uid "8C108D03-41FF-AEA9-B668-748B6A6CC425";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "D3A8FF72-4928-2054-AB41-54AC700FDC46";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D5093AE4-491C-DBA6-C3B1-0FBDCA481F35";
+	rename -uid "88C59558-4568-3225-789F-50A69BBA3094";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "16DACB43-475E-B867-815B-E1BFD8431766";
 	setAttr ".g" yes;
 createNode reference -n "Bruce01_RN";
 	rename -uid "8F544FB0-4713-7535-0776-5EB2292C78DD";
+	setAttr ".fn[0]" -type "string" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/mindbender-example/projects/hulk/assets/Bruce/publish/modelDefault/v001/modelDefault.ma";
 	setAttr -s 5 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
@@ -462,6 +463,10 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[15].x" 1.4285714626312256;
 	setAttr ".tgi[0].ni[15].y" -550;
 	setAttr ".tgi[0].ni[15].nvs" 18304;
+createNode reference -n "sharedReferenceNode";
+	rename -uid "25801A20-4A32-F49D-AAB2-D4868E33C039";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -528,6 +533,7 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "Bruce01_:modelDefault.msg" "Bruce01_RN.asn[0]";
+connectAttr "sharedReferenceNode.sr" "Bruce01_RN.sr";
 connectAttr "Bruce01_:modelDefault.iog" "Bruce01_:modelDefault_CON.dsm" -na;
 connectAttr "skinning_PLY.iog" "Bruce01_:modelDefault_CON.dsm" -na;
 connectAttr "skinning_PLYShape.iog" "Bruce01_:modelDefault_CON.dsm" -na;

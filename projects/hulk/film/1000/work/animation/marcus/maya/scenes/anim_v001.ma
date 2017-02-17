@@ -1,9 +1,9 @@
 //Maya ASCII 2016ff07 scene
 //Name: anim_v001.ma
-//Last modified: Tue, Jan 17, 2017 04:33:59 PM
+//Last modified: Fri, Feb 17, 2017 08:05:04 PM
 //Codeset: 1252
-file -rdi 1 -ns "Bruce01_" -rfn "Bruce01_RN" -typ "mayaAscii" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/pyblish-mindbender/example/projects/hulk/assets/Bruce/publish/rigDefault/v001/rigDefault.ma";
-file -r -ns "Bruce01_" -dr 1 -rfn "Bruce01_RN" -typ "mayaAscii" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/pyblish-mindbender/example/projects/hulk/assets/Bruce/publish/rigDefault/v001/rigDefault.ma";
+file -rdi 1 -ns "Bruce01_" -rfn "Bruce01_RN" -typ "mayaAscii" "$projectdir/assets/Bruce/publish/rigDefault/v001/rigDefault.ma";
+file -r -ns "Bruce01_" -dr 1 -rfn "Bruce01_RN" -typ "mayaAscii" "$projectdir/assets/Bruce/publish/rigDefault/v001/rigDefault.ma";
 requires maya "2016ff07";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -77,20 +77,21 @@ createNode transform -n "Bruce01_:rigDefault";
 	setAttr ".rp" -type "double3" 0 0 1.1102230246251565e-016 ;
 	setAttr ".sp" -type "double3" 0 0 1.1102230246251565e-016 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "9B1F00B2-42D1-0C2F-1B21-AA8DC20AE664";
+	rename -uid "5CD8B764-4E2A-B9DD-421F-51B108529977";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "6C386A1B-422D-E778-6C53-4C8896B3C3B8";
+	rename -uid "41123CA5-4F05-169E-6AF9-B3852D0A6D11";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A5814859-405D-2AAB-A413-97996BD23DA4";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "80947471-4617-AAA7-3811-DE9992157084";
+	rename -uid "58A0F54B-4331-3E8A-31D4-A3839ADA5FC6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "C0F74B98-45CD-23A7-FF8B-77B74ED3EB86";
 	setAttr ".g" yes;
 createNode reference -n "Bruce01_RN";
 	rename -uid "E027252E-4C08-2123-6DAC-B2AD490F7F1E";
+	setAttr ".fn[0]" -type "string" "C:/Users/marcus/Dropbox/AF/development/marcus/pyblish/mindbender-example/projects/hulk/assets/Bruce/publish/rigDefault/v001/rigDefault.ma";
 	setAttr -s 38 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
@@ -297,6 +298,10 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -441.66664911641089 -228.57141948881642 ;
 	setAttr ".tgi[0].vh" -type "double2" 376.19046124201037 228.57141948881642 ;
+createNode reference -n "sharedReferenceNode";
+	rename -uid "F67718C7-4D06-2E08-23FF-7B9BE230B6A8";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -369,7 +374,8 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "Bruce01_:rigDefault.msg" "Bruce01_RN.asn[0]";
-connectAttr "Bruce01_RN.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
+connectAttr "sharedReferenceNode.sr" "Bruce01_RN.sr";
 connectAttr "Bruce01_:rigDefault.iog" "Bruce01_:rigDefault_CON.dsm" -na;
+connectAttr "Bruce01_RN.msg" "Bruce01_:rigDefault_CON.dnsm" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 // End of anim_v001.ma
