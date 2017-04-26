@@ -1,0 +1,24 @@
+schema: mindbender-core:config-1.0
+
+apps:
+  - name: maya2016
+  - name: nuke10
+  - name: python
+    args: [-u, -c, print('Something nice')]
+
+tasks:
+  - label: animation
+    name: animation
+
+  - label: modeling
+    name: modeling
+
+  - label: rigging
+    name: rigging
+
+  - label: lookdev
+    name: lookdev
+
+template:
+    asset: "{projectpath}/{silo}/{asset}"
+    task: "{projectpath}/{silo}/{asset}/work/{task}/{user}/{app}"

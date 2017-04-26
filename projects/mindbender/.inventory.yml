@@ -1,0 +1,13 @@
+schema: mindbender-core:inventory-1.0
+
+assets:
+  "Witch":
+  "Car":
+  "Bush1":
+  "Bush2":
+
+film:
+  "sh010":
+  "sh020":
+  "sh050":
+  "sh060":
