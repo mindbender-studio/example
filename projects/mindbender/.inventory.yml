@@ -1,13 +1,48 @@
 schema: mindbender-core:inventory-1.0
 
 assets:
-  "Witch":
-  "Car":
-  "Bush1":
-  "Bush2":
+  3DGlasses:
+  candyColorBomb:
+  candyRed:
+  CinemaPopcorn:
+  FX_candyYellowStriped:
+  Highfive:
+  candyBlue:
+  candyGreen:
+  candyRedStripe:
+  cinemaSoda:
+  FX_lightning:
+  Jailbreak:
+  candyBlueCracked:
+  candyOrange:
+  candyYellow:
+  FX_candyChocolateBreak:
+  FX_spark:
+  LookDevMaster:
+  candyBlueStripe:
+  candyPurple:
+  cinema3Dglasses:
+  FX_CandyWrap:
+  FX_Wrap:
+  ShotCam:
+  candyChocolate:
+  candyPurpleStripe:
+  cinemaChair:
+  FX_candyYellowStretch:
+  Gene:
 
 film:
-  "sh010":
-  "sh020":
-  "sh050":
-  "sh060":
+  cinema_sh010:
+  cinema_sh030:
+  cinema_sh050:
+  FX_ColorBomb:
+  FX_Wrap:
+  striped:
+  Test_Poses:
+  cinema_sh020:
+  cinema_sh040:
+  FX_ChocolateBreak:
+  FX_Striped:
+  smash:
+  stuck:
+  zoom:

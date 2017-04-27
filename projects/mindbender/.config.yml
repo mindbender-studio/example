@@ -3,8 +3,6 @@ schema: mindbender-core:config-1.0
 apps:
   - name: maya2016
   - name: nuke10
-  - name: python
-    args: [-u, -c, print('Something nice')]
 
 tasks:
   - label: animation
@@ -20,5 +18,5 @@ tasks:
     name: lookdev
 
 template:
-    public: "{projectpath}/parent/{silo}/{asset}/publish/{subset}/{version}"
-    private: "{projectpath}/parent/{silo}/{asset}/work/{task}/{user}/{app}"
+    work: "{projectpath}/f02_prod/{silo}/{asset}/work/{task}/{user}/{app}"
+    publish: "{projectpath}/f02_prod/{silo}/{asset}/publish/{subset}/{version}"

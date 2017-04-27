@@ -3,6 +3,7 @@ schema: mindbender-core:config-1.0
 apps:
   - name: maya2016
   - name: nuke10
+  - name: dontexist
   - name: python
     args: [-u, -c, print('Something nice')]
 
@@ -20,5 +21,5 @@ tasks:
     name: lookdev
 
 template:
-    public: "{projectpath}/{silo}/{asset}/publish/{subset}/{version}"
-    private: "{projectpath}/{silo}/{asset}/work/{task}/{user}/{app}"
+    work: "{projectpath}/{silo}/{asset}/work/{task}/{user}/{app}"
+    publish: "{projectpath}/{silo}/{asset}/publish/{subset}/{version}/{subset}.{representation}"
