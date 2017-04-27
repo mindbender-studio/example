@@ -20,5 +20,5 @@ tasks:
     name: lookdev
 
 template:
-    asset: "{projectpath}/parent/{silo}/{asset}"
-    task: "{projectpath}/parent/{silo}/{asset}/work/{task}/{user}/{app}"
+    public: "{projectpath}/parent/{silo}/{asset}/publish/{subset}/{version}"
+    private: "{projectpath}/parent/{silo}/{asset}/work/{task}/{user}/{app}"
