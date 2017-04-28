@@ -1,5 +1,10 @@
 schema: mindbender-core:config-1.0
 
+metadata:
+  fps: 25
+  resolution_width: 1920
+  resolution_height: 1080
+
 apps:
   - name: maya2016
   - name: nuke10
@@ -8,16 +13,16 @@ apps:
     args: [-u, -c, print('Something nice')]
 
 tasks:
-  - label: animation
+  - label: Animation
     name: animation
 
-  - label: modeling
+  - label: Model
     name: modeling
 
-  - label: rigging
+  - label: Character Rigging
     name: rigging
 
-  - label: lookdev
+  - label: Look Development
     name: lookdev
 
 template:

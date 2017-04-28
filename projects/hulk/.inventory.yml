@@ -2,12 +2,25 @@ schema: mindbender-core:inventory-1.0
 
 assets:
   "Bruce":
+      label: Bruce Wayne
+      group: Character
   "Batman":
+      group: Character
   "Camera":
+      group: Prop
+  "Charles":
   "Tarantula":
+      group: Vehicle
+  "Biezel":
+      group: Vehicle
+  "Saab":
+      group: Vehicle
+  "StageWagon":
+      group: Vehicle
 
 film:
   "1000":
+    thumbnail: ""
     edit_in: 1000
     edit_out: 1143
 
@@ -18,3 +31,9 @@ film:
   "2000":
   "2100":
   "2400":
+
+  "smoke":
+    group: "fx"
+
+  "filler":
+    group: "fx"
